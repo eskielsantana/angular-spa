@@ -1,23 +1,23 @@
 <h2 mat-dialog-title class="dialog-title">
     <mat-icon>history_edu</mat-icon><p>{{titleLabel}}</p>
-    <span class="example-spacer"></span>
+    <span class="spacer"></span>
     <div *ngIf="!isEmpty;"><button mat-raised-button class="edit-button" color="primary" (click)="onDelete()">Delete <mat-icon>highlight_off</mat-icon></button></div>
 </h2>
 <mat-dialog-content>
     <form [formGroup]="taskForm">
-        <mat-form-field class="example-full-width">
+        <mat-form-field class="full-width">
           <mat-label>Name</mat-label>
           <input matInput autofocus placeholder="Ex. Finish the Feature" formControlName="name">
         </mat-form-field>
       
-        <mat-form-field class="example-full-width">
+        <mat-form-field class="full-width">
           <mat-label>Description</mat-label>
           <textarea matInput formControlName="desc"></textarea>
         </mat-form-field>
 
-        <table class="example-full-width" cellspacing="0"><tr>
+        <table class="full-width" cellspacing="0"><tr>
             <td>
-                <mat-form-field class="example-full-width">
+                <mat-form-field class="full-width">
                     <mat-label>Task state</mat-label>
                     <mat-select formControlName="state">
                         <mat-option value="Planned">Planned</mat-option>
@@ -27,7 +27,7 @@
                 </mat-form-field>
             </td>
             <td>
-                <mat-form-field class="example-full-width">
+                <mat-form-field class="full-width">
                     <mat-label>Estimate (Hours)</mat-label>
                     <input matInput placeholder="Ex. 6" formControlName="estimate">
                 </mat-form-field>

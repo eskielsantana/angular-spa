@@ -10,9 +10,9 @@
                     cdkDropList
                     #plannedList="cdkDropList" [cdkDropListData]="plannedTasks" [cdkDropListConnectedTo]="[progressList, completedList]"
                     listKey="Planned"
-                    class="example-list"
+                    class="list"
                     (cdkDropListDropped)="drop($event)">
-                    @for (task of plannedTasks; track task) { <app-taskcard class="example-box" (click)="openDialog(task)" [task]="task" cdkDrag/> }
+                    @for (task of plannedTasks; track task) { <app-taskcard class="box" (click)="openDialog(task)" [task]="task" cdkDrag/> }
                   </div>
                 </div>
                 <mat-divider></mat-divider>
@@ -29,9 +29,9 @@
                     cdkDropList
                     #progressList="cdkDropList" [cdkDropListData]="inProgressTasks" [cdkDropListConnectedTo]="[plannedList, completedList]"
                     listKey="InProgress"
-                    class="example-list"
+                    class="list"
                     (cdkDropListDropped)="drop($event)">
-                    @for (task of inProgressTasks; track task) { <app-taskcard class="example-box" (click)="openDialog(task)" [task]="task" cdkDrag/> }
+                    @for (task of inProgressTasks; track task) { <app-taskcard class="box" (click)="openDialog(task)" [task]="task" cdkDrag/> }
                   </div>
                 </div>
                 <mat-divider></mat-divider>
@@ -48,9 +48,9 @@
                     cdkDropList
                     #completedList="cdkDropList" [cdkDropListData]="completedTaks" [cdkDropListConnectedTo]="[plannedList, progressList]"
                     listKey="Completed"
-                    class="example-list"
+                    class="list"
                     (cdkDropListDropped)="drop($event)">
-                    @for (task of completedTaks; track task) { <app-taskcard class="example-box" (click)="openDialog(task)" [task]="task" cdkDrag/> }
+                    @for (task of completedTaks; track task) { <app-taskcard class="box" (click)="openDialog(task)" [task]="task" cdkDrag/> }
                   </div>
                 </div>
                 <mat-divider></mat-divider>

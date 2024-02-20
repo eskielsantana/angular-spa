@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
-import { BoardComponent } from '../board/board.component';
-import { TableComponent } from '../table/table.component';
+import { BoardComponent } from './pages/board/board.component';
+import { TableComponent } from './pages/table/table.component';
 
 export const routes: Routes = [
     {
