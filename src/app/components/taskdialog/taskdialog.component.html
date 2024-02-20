@@ -1,28 +1,25 @@
 <h2 mat-dialog-title class="dialog-title">
     <mat-icon>history_edu</mat-icon><p>{{titleLabel}}</p>
     <span class="example-spacer"></span>
-    <div *ngIf="!isEmpty;">
-        <button mat-icon-button class="edit-button" (click)="onDelete()"><mat-icon>edit_document</mat-icon></button>
-    </div>
-    
+    <div *ngIf="!isEmpty;"><button mat-raised-button class="edit-button" color="primary" (click)="onDelete()">Delete <mat-icon>highlight_off</mat-icon></button></div>
 </h2>
 <mat-dialog-content>
-    <form class="example-form">
+    <form [formGroup]="taskForm">
         <mat-form-field class="example-full-width">
           <mat-label>Name</mat-label>
-          <input matInput placeholder="Ex. Finish the Feature" [(ngModel)]="task.name" name="name">
+          <input matInput autofocus placeholder="Ex. Finish the Feature" formControlName="name">
         </mat-form-field>
       
         <mat-form-field class="example-full-width">
           <mat-label>Description</mat-label>
-          <textarea matInput [(ngModel)]="task.desc" name="desc"></textarea>
+          <textarea matInput formControlName="desc"></textarea>
         </mat-form-field>
 
         <table class="example-full-width" cellspacing="0"><tr>
             <td>
                 <mat-form-field class="example-full-width">
                     <mat-label>Task state</mat-label>
-                    <mat-select [(ngModel)]="task.state" name="state">
+                    <mat-select formControlName="state">
                         <mat-option value="Planned">Planned</mat-option>
                         <mat-option value="InProgress">In Progress</mat-option>
                         <mat-option value="Completed">Completed</mat-option>
@@ -32,15 +29,12 @@
             <td>
                 <mat-form-field class="example-full-width">
                     <mat-label>Estimate (Hours)</mat-label>
-                    <input matInput placeholder="Ex. 6" [(ngModel)]="task.estimate" name="estimate">
+                    <input matInput placeholder="Ex. 6" formControlName="estimate">
                 </mat-form-field>
             </td>
         </tr></table>
     </form>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-    <button mat-button (click)="onCreate()">{{buttonLabel}}</button>
-    <div *ngIf="!isEmpty;">
-        <button mat-button (click)="onDelete()">Delete</button>
-    </div>
+    <button mat-raised-button (click)="onCreate()" [disabled]="taskForm.invalid">{{buttonLabel}}<mat-icon>save</mat-icon></button>
 </mat-dialog-actions>

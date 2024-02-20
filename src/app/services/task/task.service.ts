@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DataService } from '../data/data.service';
-import { Task } from '../../others/task.interface';
+import { Task } from '../../interfaces/task.interface';
 import { CallbackFunction, TaskListsFunction } from '../../others/types';
 
 @Injectable({

@@ -12,7 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 
-import { Task } from '../../others/task.interface';
+import { Task } from '../../interfaces/task.interface';
 import { TaskCard } from '../../components/taskcard/taskcard.component';
 import { UnderBar } from '../../components/underbar/underbar.component';
 import { TaskService } from '../../services/task/task.service';

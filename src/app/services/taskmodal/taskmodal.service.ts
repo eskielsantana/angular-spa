@@ -3,7 +3,7 @@ import { TaskDialog } from '../../components/taskdialog/taskdialog.component';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { TaskService } from '../task/task.service';
 import { CallbackFunction } from '../../others/types';
-import { Task } from '../../others/task.interface';
+import { Task } from '../../interfaces/task.interface';
 
 @Injectable({
   providedIn: 'root'

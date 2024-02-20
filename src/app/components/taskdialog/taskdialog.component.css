@@ -12,22 +12,14 @@
     display: flex;
     align-items: center;
     padding-bottom: 0px;
-    margin: 5px;
+    padding: 5px 5px 5px 15px;
+    background-color: purple;
+    color: white;
 }
 
 .dialog-title p {
     margin: 0;
     margin-left: 5px;
-}
-
-.edit-button {
-    /* padding: 0; */
-    /* width: 36px; */
-    /* height: 36px; */
-}
-
-.edit-button .mat-icon {
-    /* margin: 0; */
 }
 
 .example-spacer { flex: 1 1 auto; }
