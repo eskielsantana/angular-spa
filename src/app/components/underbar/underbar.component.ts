@@ -15,6 +15,7 @@ import { RouterModule } from '@angular/router';
 })
 export class UnderBar {
   @Input() updateData!: () => void;
+  @Input() viewMode: string = "Board";
 
   constructor (private taskModalService:TaskModalService) {}
 
