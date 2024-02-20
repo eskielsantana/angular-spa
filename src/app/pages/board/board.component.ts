@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';  
-import { MatGridListModule } from '@angular/material/grid-list';
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';  
+import {MatGridListModule} from '@angular/material/grid-list';
 import {
   CdkDragDrop,
   moveItemInArray,
@@ -8,15 +8,15 @@ import {
   CdkDrag,
   CdkDropList,
 } from '@angular/cdk/drag-drop';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 
-import { Task } from '../../interfaces/task.interface';
-import { TaskCard } from '../../components/taskcard/taskcard.component';
-import { UnderBar } from '../../components/underbar/underbar.component';
-import { TaskService } from '../../services/task/task.service';
-import { TaskModalService } from '../../services/taskmodal/taskmodal.service';
+import {Task} from '../../interfaces/task.interface';
+import {TaskCard} from '../../components/taskcard/taskcard.component';
+import {UnderBar} from '../../components/underbar/underbar.component';
+import {TaskService} from '../../services/task/task.service';
+import {TaskModalService} from '../../services/taskmodal/taskmodal.service';
 
 @Component({
   selector: 'app-board',

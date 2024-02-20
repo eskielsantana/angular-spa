@@ -4,7 +4,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {TaskModalService} from '../../services/taskmodal/taskmodal.service';
-import { RouterModule } from '@angular/router';
+import {RouterModule} from '@angular/router';
 
 @Component({
   selector: 'app-underbar',

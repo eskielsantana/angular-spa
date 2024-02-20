@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from '../../components/header/header.component';
-import { UnderBar } from '../../components/underbar/underbar.component';
+import {Component} from '@angular/core';
+import {RouterOutlet} from '@angular/router';
+import {HeaderComponent} from '../../components/header/header.component';
+import {UnderBar} from '../../components/underbar/underbar.component';
 
 @Component({
   selector: 'app-root',

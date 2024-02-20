@@ -1,5 +1,5 @@
-import { Component, Inject, NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component, Inject, NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {
   MAT_DIALOG_DATA,
   MatDialogRef,
@@ -18,7 +18,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 
-import { Task } from '../../interfaces/task.interface';
+import {Task} from '../../interfaces/task.interface';
 
 @Component({
   selector: 'app-taskdialog',
