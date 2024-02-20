@@ -1,0 +1,61 @@
+<app-underbar [updateData]="loadData"/>
+<div class="content">
+    <mat-grid-list cols="3" rowHeight="600px">
+        <mat-grid-tile class="columList" [colspan]="1" [rowspan]="1">
+            <div class="task-list">
+                <div class="listHeader"><mat-icon>sticky_note_2</mat-icon><h2> Planned</h2></div>
+
+                <div class="listContent">
+                    <div
+                    cdkDropList
+                    #plannedList="cdkDropList" [cdkDropListData]="plannedTasks" [cdkDropListConnectedTo]="[progressList, completedList]"
+                    listKey="Planned"
+                    class="example-list"
+                    (cdkDropListDropped)="drop($event)">
+                    @for (task of plannedTasks; track task) { <app-taskcard class="example-box" (click)="openDialog(task)" [task]="task" cdkDrag/> }
+                  </div>
+                </div>
+                <mat-divider></mat-divider>
+                <div class="listFooter"><h3>Estimate: {{plannedEstimateHours}} {{plural(plannedEstimateHours, 'hour', 'hours')}}</h3></div>
+            </div>
+        </mat-grid-tile>
+    
+        <mat-grid-tile class="columList">
+            <div class="task-list">
+                <div class="listHeader"><mat-icon>rocket_launch</mat-icon><h2>In Progress</h2></div>
+            
+                <div class="listContent">
+                    <div
+                    cdkDropList
+                    #progressList="cdkDropList" [cdkDropListData]="inProgressTasks" [cdkDropListConnectedTo]="[plannedList, completedList]"
+                    listKey="InProgress"
+                    class="example-list"
+                    (cdkDropListDropped)="drop($event)">
+                    @for (task of inProgressTasks; track task) { <app-taskcard class="example-box" (click)="openDialog(task)" [task]="task" cdkDrag/> }
+                  </div>
+                </div>
+                <mat-divider></mat-divider>
+                <div class="listFooter"><h3>Estimate: {{inProgressEstimateHours}} {{plural(inProgressEstimateHours, 'hour', 'hours')}}</h3></div>
+            </div>
+        </mat-grid-tile>
+    
+        <mat-grid-tile class="columList">
+            <div class="task-list">
+                <div class="listHeader"><mat-icon>done_outline</mat-icon><h2>Completed</h2></div>
+            
+                <div class="listContent">
+                    <div
+                    cdkDropList
+                    #completedList="cdkDropList" [cdkDropListData]="completedTaks" [cdkDropListConnectedTo]="[plannedList, progressList]"
+                    listKey="Completed"
+                    class="example-list"
+                    (cdkDropListDropped)="drop($event)">
+                    @for (task of completedTaks; track task) { <app-taskcard class="example-box" (click)="openDialog(task)" [task]="task" cdkDrag/> }
+                  </div>
+                </div>
+                <mat-divider></mat-divider>
+                <div class="listFooter"><h3>Estimate: {{completedEstimateHours}} {{plural(completedEstimateHours, 'hour', 'hours')}}</h3></div>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

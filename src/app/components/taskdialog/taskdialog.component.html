@@ -1,0 +1,46 @@
+<h2 mat-dialog-title class="dialog-title">
+    <mat-icon>history_edu</mat-icon><p>{{titleLabel}}</p>
+    <span class="example-spacer"></span>
+    <div *ngIf="!isEmpty;">
+        <button mat-icon-button class="edit-button" (click)="onDelete()"><mat-icon>edit_document</mat-icon></button>
+    </div>
+    
+</h2>
+<mat-dialog-content>
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Ex. Finish the Feature" [(ngModel)]="task.name" name="name">
+        </mat-form-field>
+      
+        <mat-form-field class="example-full-width">
+          <mat-label>Description</mat-label>
+          <textarea matInput [(ngModel)]="task.desc" name="desc"></textarea>
+        </mat-form-field>
+
+        <table class="example-full-width" cellspacing="0"><tr>
+            <td>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Task state</mat-label>
+                    <mat-select [(ngModel)]="task.state" name="state">
+                        <mat-option value="Planned">Planned</mat-option>
+                        <mat-option value="InProgress">In Progress</mat-option>
+                        <mat-option value="Completed">Completed</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Estimate (Hours)</mat-label>
+                    <input matInput placeholder="Ex. 6" [(ngModel)]="task.estimate" name="estimate">
+                </mat-form-field>
+            </td>
+        </tr></table>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button (click)="onCreate()">{{buttonLabel}}</button>
+    <div *ngIf="!isEmpty;">
+        <button mat-button (click)="onDelete()">Delete</button>
+    </div>
+</mat-dialog-actions>
