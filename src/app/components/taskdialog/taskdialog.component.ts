@@ -49,6 +49,10 @@ export class TaskDialog {
       estimate: [this.task.estimate, [Validators.required, Validators.pattern('^[0-9]+$'), Validators.min(0)]],
       state: [this.task.state, Validators.required],
     });
+
+    this.taskForm.valueChanges.subscribe((formValues) => {
+      this.task = { ...this.task, ...formValues };
+    });
   }
 
   onNoClick(): void { this.dialogRef.close(); }
